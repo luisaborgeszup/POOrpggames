@@ -1,0 +1,123 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module character</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>character</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/luisa/PycharmProjects/RPG/venv/rpg/character.py">/home/luisa/PycharmProjects/RPG/venv/rpg/character.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="character.html#Character">Character</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="character.html#Enemy">Enemy</a>
+</font></dt><dt><font face="helvetica, arial"><a href="character.html#Friend">Friend</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Character">class <strong>Character</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Initialises&nbsp;the&nbsp;character&nbsp;with&nbsp;a&nbsp;name,&nbsp;a&nbsp;description&nbsp;and<br>
+initiates&nbsp;the&nbsp;conversation&nbsp;with&nbsp;a&nbsp;non&nbsp;existing&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="Character-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Describes&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;the&nbsp;character&nbsp;is&nbsp;in&nbsp;the&nbsp;game&nbsp;itself.</tt></dd></dl>
+
+<dl><dt><a name="Character-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>Fights&nbsp;with&nbsp;the&nbsp;character,&nbsp;but&nbsp;it&nbsp;only&nbsp;do&nbsp;so&nbsp;if&nbsp;the&nbsp;character&nbsp;is&nbsp;an&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Character-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Defines&nbsp;a&nbsp;character's&nbsp;response&nbsp;to&nbsp;when&nbsp;it&nbsp;is&nbsp;spoken&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="Character-talk"><strong>talk</strong></a>(self)</dt><dd><tt>Talks&nbsp;to&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;he&nbsp;has&nbsp;a&nbsp;response.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Enemy">class <strong>Enemy</strong></a>(<a href="character.html#Character">Character</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Enemy-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Initialises&nbsp;the&nbsp;enemy&nbsp;with&nbsp;the&nbsp;same&nbsp;attributes&nbsp;as&nbsp;a&nbsp;regular<br>
+character&nbsp;plus&nbsp;a&nbsp;weakness&nbsp;and&nbsp;a&nbsp;stolen&nbsp;item,&nbsp;both&nbsp;with&nbsp;non&nbsp;existing&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-defeated"><strong>defeated</strong></a>(self)</dt><dd><tt>Sets&nbsp;the&nbsp;enemy&nbsp;as&nbsp;a&nbsp;non&nbsp;existing&nbsp;value&nbsp;so&nbsp;he&nbsp;doesn't&nbsp;shows&nbsp;up<br>
+in&nbsp;them&nbsp;game&nbsp;again&nbsp;if&nbsp;he&nbsp;has&nbsp;been&nbsp;defeated.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>Fights&nbsp;with&nbsp;the&nbsp;enemy.&nbsp;If&nbsp;the&nbsp;enemy&nbsp;wins,&nbsp;the&nbsp;game&nbsp;ends.&nbsp;If&nbsp;the&nbsp;player&nbsp;wins,<br>
+the&nbsp;game&nbsp;continues.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_defeated_enemies"><strong>get_defeated_enemies</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;enemies&nbsp;whom&nbsp;were&nbsp;defeated&nbsp;by&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_stolen_item"><strong>get_stolen_item</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;stolen&nbsp;item&nbsp;from&nbsp;the&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-get_weakness"><strong>get_weakness</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;weakness&nbsp;of&nbsp;the&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-number_of_defeats"><strong>number_of_defeats</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;string&nbsp;equivalent&nbsp;to&nbsp;the&nbsp;number&nbsp;of&nbsp;enemies&nbsp;whom<br>
+were&nbsp;defeated&nbsp;by&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_defeated_enemies"><strong>set_defeated_enemies</strong></a>(self, defeated_enemies)</dt><dd><tt>Sets&nbsp;the&nbsp;number&nbsp;of&nbsp;enemies&nbsp;whom&nbsp;wherr&nbsp;defeated&nbsp;by&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_stolen_item"><strong>set_stolen_item</strong></a>(self, item_enemy)</dt><dd><tt>Sets&nbsp;the&nbsp;stolen&nbsp;item&nbsp;from&nbsp;the&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_weakness"><strong>set_weakness</strong></a>(self, item_weakness)</dt><dd><tt>Sets&nbsp;the&nbsp;weakness&nbsp;of&nbsp;the&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-steal"><strong>steal</strong></a>(self)</dt><dd><tt>Attempt&nbsp;of&nbsp;steal&nbsp;an&nbsp;item&nbsp;from&nbsp;the&nbsp;enemy&nbsp;if&nbsp;he&nbsp;has&nbsp;one.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>enemies_defeated</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><a name="Enemy-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Describes&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;the&nbsp;character&nbsp;is&nbsp;in&nbsp;the&nbsp;game&nbsp;itself.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Defines&nbsp;a&nbsp;character's&nbsp;response&nbsp;to&nbsp;when&nbsp;it&nbsp;is&nbsp;spoken&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="Enemy-talk"><strong>talk</strong></a>(self)</dt><dd><tt>Talks&nbsp;to&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;he&nbsp;has&nbsp;a&nbsp;response.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Friend">class <strong>Friend</strong></a>(<a href="character.html#Character">Character</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Friend-__init__"><strong>__init__</strong></a>(self, char_name, char_description)</dt><dd><tt>Initialises&nbsp;the&nbsp;enemy&nbsp;with&nbsp;the&nbsp;same&nbsp;attributes&nbsp;as&nbsp;a&nbsp;regular<br>
+character&nbsp;plus&nbsp;greetings&nbsp;with&nbsp;a&nbsp;non&nbsp;existing&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="Friend-get_greetings"><strong>get_greetings</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;friends's&nbsp;greeting.</tt></dd></dl>
+
+<dl><dt><a name="Friend-greets"><strong>greets</strong></a>(self)</dt><dd><tt>Let&nbsp;the&nbsp;friend&nbsp;greet&nbsp;the&nbsp;player.</tt></dd></dl>
+
+<dl><dt><a name="Friend-set_greetings"><strong>set_greetings</strong></a>(self, char_greetings)</dt><dd><tt>Sets&nbsp;a&nbsp;greeting&nbsp;for&nbsp;the&nbsp;friend&nbsp;character.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="character.html#Character">Character</a>:<br>
+<dl><dt><a name="Friend-describe"><strong>describe</strong></a>(self)</dt><dd><tt>Describes&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;the&nbsp;character&nbsp;is&nbsp;in&nbsp;the&nbsp;game&nbsp;itself.</tt></dd></dl>
+
+<dl><dt><a name="Friend-fight"><strong>fight</strong></a>(self, combat_item)</dt><dd><tt>Fights&nbsp;with&nbsp;the&nbsp;character,&nbsp;but&nbsp;it&nbsp;only&nbsp;do&nbsp;so&nbsp;if&nbsp;the&nbsp;character&nbsp;is&nbsp;an&nbsp;enemy.</tt></dd></dl>
+
+<dl><dt><a name="Friend-set_conversation"><strong>set_conversation</strong></a>(self, conversation)</dt><dd><tt>Defines&nbsp;a&nbsp;character's&nbsp;response&nbsp;to&nbsp;when&nbsp;it&nbsp;is&nbsp;spoken&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="Friend-talk"><strong>talk</strong></a>(self)</dt><dd><tt>Talks&nbsp;to&nbsp;the&nbsp;character&nbsp;only&nbsp;if&nbsp;he&nbsp;has&nbsp;a&nbsp;response.</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
