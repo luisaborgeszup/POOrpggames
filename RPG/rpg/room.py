@@ -61,12 +61,18 @@ class Room():
 
     def get_details(self):
         """Outputs the information of the room such as description and linked rooms to it."""
-        print("The ", self.name)
-        print('-----------------------------------------------------------------------')
-        print(self.description, '\n')
-        for direction in self.linked_rooms:
-            rooms_around = self.linked_rooms[direction]
-            print("The ", rooms_around.get_name(), " is ", direction)
+        if self.name is not None:
+            print("The ", self.name)
+            print('-----------------------------------------------------------------------')
+            print(self.description, '\n')
+            for direction in self.linked_rooms:
+                rooms_around = self.linked_rooms[direction]
+                print("The ", rooms_around.get_name(), " is ", direction)
+
+            return not None
+
+        else:
+            return None
 
     def move(self, direction):
         """Allows the player to move towards rooms which exists."""

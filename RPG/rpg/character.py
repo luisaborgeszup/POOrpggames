@@ -8,7 +8,18 @@ class Character():
         self.description = char_description
         self.conversation = None
 
-    # Describe this character
+    def get_name(self):
+        return self.name
+
+    def set_name(self, char_name):
+        self.name = char_name
+
+    def get_description(self):
+        return self.description
+
+    def set_description(self, char_description):
+        self.description = char_description
+
     def describe(self):
         """Describes the character only if the character is in the game itself."""
         if self.name is not None:
@@ -17,12 +28,10 @@ class Character():
         else:
             print("")
 
-    # Set what this character will say when talked to
     def set_conversation(self, conversation):
         """Defines a character's response to when it is spoken to."""
         self.conversation = conversation
 
-    # Talk to this character
     def talk(self):
         """Talks to the character only if he has a response."""
         if self.conversation is not None:
@@ -30,7 +39,6 @@ class Character():
         else:
             print(self.name + " doesn't want to talk to you")
 
-    # Fight with this character
     def fight(self, combat_item):
         """Fights with the character, but it only do so if the character is an enemy."""
         print(self.name + " doesn't want to fight with you")
