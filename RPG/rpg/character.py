@@ -25,8 +25,13 @@ class Character():
         if self.name is not None:
             print( self.name + " is here!" )
             print( self.description )
+            return not None
         else:
             print("")
+            return None
+
+    def get_conversation(self):
+        return self.conversation
 
     def set_conversation(self, conversation):
         """Defines a character's response to when it is spoken to."""
@@ -36,8 +41,10 @@ class Character():
         """Talks to the character only if he has a response."""
         if self.conversation is not None:
             print("[" + self.name + " says]: " + self.conversation)
+            return not None
         else:
             print(self.name + " doesn't want to talk to you")
+            return None
 
     def fight(self, combat_item):
         """Fights with the character, but it only do so if the character is an enemy."""
@@ -142,8 +149,10 @@ class Friend(Character):
 
     def greets(self):
         """Let the friend greet the player."""
-        print("[" + self.name + " greets you]: " + self.greetings)
+        if self.greetings is not None:
+            print("[" + self.name + " greets you]: " + self.greetings)
+            return not None
 
-
-
-
+        else:
+            print(self.name + " doesn't want greet you")
+            return None

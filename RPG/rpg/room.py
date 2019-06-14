@@ -47,7 +47,6 @@ class Room():
         """Sets the item which was taken as a
         non existing value so it can be removed from the room."""
         self.item = None
-        return None
 
     def describe(self):
         """Describes the room."""
