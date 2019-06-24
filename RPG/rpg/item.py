@@ -1,4 +1,4 @@
-class Item():
+class Item:
 
     def __init__(self, item_name):
         """Initialises the room with a name and the item's description with

@@ -4,14 +4,11 @@ from item import Item
 
 class ItemSteps2(unittest2.TestCase):
 
-
     def setUp(self):
         self.item = Item("cheese")
 
-
     def test_get_name(self):
         self.assertEqual(self.item.get_name_item(), "cheese", "The function isn't working correctly.")
-
 
     def test_set_name(self):
         self.item.set_name_item("dog")

@@ -1,4 +1,4 @@
-class Character():
+class Character:
 
     # Create a character
     def __init__(self, char_name, char_description):
@@ -128,7 +128,6 @@ class Enemy(Character):
         """Returns the string equivalent to the number of enemies whom
         were defeated by the player."""
         return str(self.get_defeated_enemies())
-
 
 
 class Friend(Character):
