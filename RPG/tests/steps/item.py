@@ -1,9 +1,9 @@
-class Item:
+class Item(object):
 
     def __init__(self, item_name):
         """Initialises the room with a name and the item's description with
         a non existing value."""
-        self.name_item= item_name
+        self.name_item = item_name
         self.desc_item = None
 
     def set_desc_item(self, item_desc):
@@ -26,9 +26,11 @@ class Item:
         """Describes the item only if it exists."""
         if self.name_item is not None:
             print("\nLook! It seems there is " + self.desc_item + "!")
+            return not None
 
         else:
             print("")
+            return None
 
     def item_stolen(self):
         """Returns the name of the stolen item of the current room."""

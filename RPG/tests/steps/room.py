@@ -1,7 +1,4 @@
-class Room:
-
-    rooms = []
-    aux = 0
+class Room():
 
     def __init__(self, room_name):
         """Initialises the room with a name and a
@@ -13,7 +10,6 @@ class Room:
         self.linked_rooms = {}
         self.character = None
         self.item = None
-        Room.rooms.append(self.name)
 
     def set_character(self, new_character):
         """Sets a character in the room."""
@@ -51,10 +47,22 @@ class Room:
         """Sets the item which was taken as a
         non existing value so it can be removed from the room."""
         self.item = None
+        return None
 
     def describe(self):
         """Describes the room."""
-        print(self.description)
+        if self.description is not None:
+            print(self.description)
+            return not None
+
+        else:
+            return None
+
+    def link_to_room(self, room_to_link, direction):
+        """Saves the direction, for which two rooms were linked, in the dictionary."""
+        self.linked_rooms[direction] = room_to_link
+        #print(self.name, "linked_rooms:", repr(self.linked_rooms))
+        # ^ used to show how the dictionary gets built up
 
     def get_details(self):
         """Outputs the information of the room such as description and linked rooms to it."""
@@ -70,3 +78,13 @@ class Room:
 
         else:
             return None
+
+    def move(self, direction):
+        """Allows the player to move towards rooms which exists."""
+        if direction in self.linked_rooms:
+            return self.linked_rooms[direction]
+
+        else:
+            print("There's nothing here asshole.")
+            return self
+
