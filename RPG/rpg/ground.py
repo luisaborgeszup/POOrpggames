@@ -5,10 +5,12 @@ import pandas as pd
 class Ground:
 
     def __init__(self):
-        self.list = Room.rooms
+        self.room_list = Room.rooms
+        self.backpack = {}
         self.character = None
-        self.linked_rooms = np.zeros(len(self.list)**2, dtype=int).reshape((len(self.list), len(self.list)))
-        self.linked_rooms = pd.DataFrame(self.linked_rooms, index=self.list, columns=self.list)
+        self.item = None
+        self.linked_rooms = np.zeros(len(self.room_list)**2, dtype=int).reshape((len(self.room_list), len(self.room_list)))
+        self.linked_rooms = pd.DataFrame(self.linked_rooms, index=self.room_list, columns=self.room_list)
         for i in range(self.linked_rooms.index.size):
             for j in range(self.linked_rooms.columns.size):
                 if i == j:
@@ -27,24 +29,18 @@ class Ground:
                     if self.linked_rooms.ix[i, j] == 1:
                         return True
 
-    def get_details(self):
-        """Outputs the information of the room such as description and linked rooms to it."""
-        if self.name is not None:
-            print("The ", self.name)
-            print('-----------------------------------------------------------------------')
-            print(self.description, '\n')
-            for direction in self.linked_rooms:
-                rooms_around = self.linked_rooms[direction]
-                print("The ", rooms_around.get_name(), " is ", direction)
-
-            return not None
-
-        else:
-            return None
-
     def defeated(self):
+        Enemy.enemies_defeated += 1
         self.character = None
         return None
+
+    def item_was_taken(self, stolen_item):
+        self.backpack[stolen_item] = self.item
+        self.item = None
+        return None
+
+    def item_stolen(self):
+        return self.item
 
 
 if __name__ == "__main__":
@@ -57,5 +53,5 @@ if __name__ == "__main__":
     map1.link_rooms(garden, road)
     map1.link_rooms(garden, kitchen)
     map1.link_rooms(road, garden)
-    map1.evaluate(pool)
+    map1.evaluate(kitchen, pool)
     print(map1.linked_rooms)
